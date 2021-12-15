@@ -1,0 +1,9 @@
+.register-bg{
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/658b3534563445.56d5973c0d1c9.jpg');
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-blend-mode: overlay;
+}
