@@ -8,11 +8,12 @@ import Launch from './Items/Launch/Launch';
 import Other from './Items/Others/Others';
 import JoinTeam from './JoinTeam/JoinTeam';
 import Navigation from './Navigation/Navigation';
+import './Home.css'
 
 const Home = () => {
     const {user}=useAuth();
     return (
-        <div>
+        <div className="home-bg">
             <Navigation></Navigation>
             <Banner></Banner>
            

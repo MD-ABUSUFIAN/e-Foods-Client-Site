@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardGroup, Container, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import './ManageOrder.css';
 import DashBoardNav from '../DashBoardNav/DashBoardNav';
 
 
@@ -28,12 +28,12 @@ const ManageOrder = () => {
     }
    
     return (
-       <div>
+       <div className="manageOrder-bg">
            <DashBoardNav/>
 
-            <Container id="breakfast" className="my-5 pb-5 main-box">
+            <Container id="breakfast" className="mt-5 pb-5 main-box">
             { isLoading &&  <Spinner animation="border" variant="primary" />}
-            <h1 className="text-center py-3 fw-bolder text-black fs-1 main-box">MANAGE ALL FOODS ORDER</h1>
+            <h1 className="text-center py-3 fw-bolder text-white fs-1 main-box">MANAGE ALL FOODS ORDER</h1>
             
            <div className="row mt-5 ">
                {

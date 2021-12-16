@@ -26,7 +26,7 @@ const Breakfast = () => {
         <Container id="breakfast" className="my-5 pb-5 main-box">
             { isLoading && <Spinner animation="border" variant="primary" />}
             
-            <h1 className="text-center py-3 fw-bolder text-black fs-1 main-box">Welcome e-Foods BreakFast Food Items</h1>
+            <h1 className="text-center py-3 fw-bolder text-white fs-1 main-box">Welcome e-Foods BreakFast Food Items</h1>
            <div className="row mt-5 ">
                {
                    foods.map(food =><div key={food?._id} food={food} className="col col-lg-4 col-md-6 col-sm-12 col-12 mb-4">

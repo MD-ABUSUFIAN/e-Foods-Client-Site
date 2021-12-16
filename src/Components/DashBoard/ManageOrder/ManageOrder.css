@@ -1,0 +1,9 @@
+.manageOrder-bg{
+    background-image: url('https://i.pinimg.com/originals/3e/b3/94/3eb394712697abdc84ff3541662d07df.jpg');
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-blend-mode: overlay;
+}

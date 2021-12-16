@@ -23,7 +23,7 @@ const Other= () => {
     return (
         <Container id="varities" className="my-5 main-box pb-5">
             { isLoading && <Spinner animation="border" variant="primary" />}
-            <h1 className="text-center py-3 fw-bolder text-danger fs-1 main-box">Welcome e-Foods Varities Food item</h1>
+            <h1 className="text-center py-3 fw-bolder text-primary fs-1 main-box">Welcome e-Foods Varities Food item</h1>
            <div className="row mt-5">
                {
                    foods.map(food =><div key={food?._id} food={food} className="col col-lg-3 col-md-4 col-sm-6 col-6 mb-4">

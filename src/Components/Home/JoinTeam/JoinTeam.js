@@ -8,7 +8,7 @@ const JoinTeam = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
     return (
-        <Container className="main-box my-5 bg-black">
+        <Container className="main-box mt-5">
             <h1 className="text-center p-3 fs-1 fw-bolder text-white main-box ">Join Our Team</h1>
             <div className="row ">
 
@@ -17,7 +17,7 @@ const JoinTeam = () => {
                 <div className="col col-lg-6 col-md-6 col-sm-12 col-12 py-5 px-3 text-white fw-bolder align-item-justify">
 
                 <div>
-                <h2>why not join our team?</h2>
+                <h1 className="pb-2 text-info">why not join our team?</h1>
                 <p>
                 When we started e-Foods, everybody asked us “Why?” They asked, “Why create another sandwich brand?” We answered, “Why not?” Why not use whole grains, organic ingredients, and organic grass-fed beef? Why not serve chutney and aioli and arugula and prosciutto? Why not post calorie counts and sodium? Why not be transparent about nutrutional information? Why not use 100% wind and solar power and compost in all locations? Why not use iPads and Mini Coopers and any other fun smart thing that makes our business run better? Why would you want to work or eat anywhere else? We wouldn’t.
                 </p>
@@ -46,13 +46,13 @@ const JoinTeam = () => {
                 <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <h2 className="text-danger fw-bolder ">Apply Now</h2>
-                    <label className="text-black fw-bolder mt-4">Name</label>
+                    <label className="text-warning fw-bolder mt-4">Name</label>
                     <input className='w-100 p-2 my-2 rounded' {...register("name", )} type="text" placeholder="Enter Your Name" />
-                    <label  className="text-black fw-bolder mt-2">Email</label>
+                    <label  className="text-warning fw-bolder mt-2">Email</label>
                     <input className='w-100 p-2 mb-2 rounded' {...register("email")} type="email" placeholder="Enter Your Email" />
-                    <label className="text-black fw-bolder mt-2">Subject</label>
+                    <label className="text-warning fw-bolder mt-2">Subject</label>
                     <input className='w-100 p-2 mb-2 rounded' {...register("subject")} type="text" placeholder="Enter Your Subject" />
-                    <label className="text-black fw-bolder mt-2">Message</label>
+                    <label className="text-warning fw-bolder mt-2">Message</label>
                     <textarea className='w-100 p-2 mb-2 rounded' {...register("message")} placeholder="Write Your Message" />
                   
                     <input className='w-100 p-2 rounded bg-primary border-0 text-white fw-bold' type="submit" value="SEND" />

@@ -11,7 +11,7 @@ const AddProduct = () => {
      const [isLoading,setIsLoading] =useState(false);
   const onSubmit = data => {
       setIsLoading(true);
-      fetch('http://localhost:5000/foodsItem',{
+      fetch('https://pacific-journey-19792.herokuapp.com/foodsItem',{
           method: 'POST',
           headers: { 'Content-Type': 'application/json'},
           body: JSON.stringify(data)
