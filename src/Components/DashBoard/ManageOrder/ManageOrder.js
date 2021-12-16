@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardGroup, Container, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import DashBoardNav from '../DashBoardNav/DashBoardNav';
 
 
 
-const Other= () => {
+const ManageOrder = () => {
     const[foods,setFoods]=useState([]);
     const [isLoading,setIsLoading]=useState(true);
 
@@ -20,18 +21,27 @@ const Other= () => {
           
         })
     },[])
+
+    const handleDelete=id=>{
+        console.log(id)
+    }
+   
     return (
-        <Container id="varities" className="my-5 main-box pb-5">
-            { isLoading && <Spinner animation="border" variant="primary" />}
-            <h1 className="text-center py-3 fw-bolder text-danger fs-1 main-box">Welcome e-Foods Varities Food item</h1>
-           <div className="row mt-5">
+       <div>
+           <DashBoardNav/>
+
+            <Container id="breakfast" className="my-5 pb-5 main-box">
+            { isLoading &&  <Spinner animation="border" variant="primary" />}
+            <h1 className="text-center py-3 fw-bolder text-black fs-1 main-box">MANAGE ALL FOODS ORDER</h1>
+            
+           <div className="row mt-5 ">
                {
-                   foods.map(food =><div key={food?._id} food={food} className="col col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
+                   foods?.map(food =><div key={food?._id} food={food} className="col col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
                     <CardGroup>
                         <Card>
                             <Card.Img variant="top" src={food?.image}  />
                             <Card.Body>
-                                <Card.Title>{food?.title}</Card.Title>
+                                <Card.Title className="fw-bolder text-black">{food?.title}</Card.Title>
                                 <Card.Text>
                                     {food?.description}
                                 </Card.Text>
@@ -40,23 +50,24 @@ const Other= () => {
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <Link to={`/confirmOrder/${food._id}`}>
-                                <button className="btn btn-primary fw-bolder">Order-Now</button>
-                               </Link>
+                             
+                            <button onClick={()=>handleDelete(food?._id)} className="btn btn-danger fw-bold">DELETE</button>
+                          
                             </Card.Footer>
                          </Card>
 
                     </CardGroup>
                    </div>
                     
-                   
+               
                    
                    )
                }
 
            </div>
         </Container>
+       </div>
     );
 };
 
-export default Other;
+export default ManageOrder;

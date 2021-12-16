@@ -1,60 +1,35 @@
-import React from 'react';
-import { Card, CardGroup, Container } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Card, CardGroup, Container, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Breakfast.css'
 
-const foods=[
-    {
-        id:1,
-        title:"Nanna Kacchi",
-        image:"https://static.hungrynaki.com/hungrynaki-v4/restaurants/nanna_kacchi_ghar/meta/nanna_kacchi_ghar_cover_1630786753688.jpeg",
-        description:"South Indian Biryani Food test and Yummy Yummy with Sweet Firni 1 Cup from Nanna Kacchi Ghor,Mirpur,Dhaka,Bangladesh",
-        price:50,
-    },
-    {
-        id:2,
-        title:"Nanna Kacchi",
-        image:"https://static.hungrynaki.com/hungrynaki-v4/restaurants/nanna_kacchi_ghar/meta/nanna_kacchi_ghar_cover_1630786753688.jpeg",
-        description:"South Indian Biryani Food test and Yummy Yummy with Sweet Firni 1 Cup from Nanna Kacchi Ghor,Mirpur,Dhaka,Bangladesh",
-        price:50,
-    },
-    {
-        id:3,
-        title:"Nanna Kacchi",
-        image:"https://static.hungrynaki.com/hungrynaki-v4/restaurants/nanna_kacchi_ghar/meta/nanna_kacchi_ghar_cover_1630786753688.jpeg",
-        description:"South Indian Biryani Food test and Yummy Yummy with Sweet Firni 1 Cup from Nanna Kacchi Ghor,Mirpur,Dhaka,Bangladesh",
-        price:50,
-    },
-    {
-        id:4,
-        title:"Nanna Kacchi",
-        image:"https://static.hungrynaki.com/hungrynaki-v4/restaurants/nanna_kacchi_ghar/meta/nanna_kacchi_ghar_cover_1630786753688.jpeg",
-        description:"South Indian Biryani Food test and Yummy Yummy with Sweet Firni 1 Cup from Nanna Kacchi Ghor,Mirpur,Dhaka,Bangladesh",
-        price:50,
-    },
-    {
-        id:5,
-        title:"Nanna Kacchi",
-        image:"https://static.hungrynaki.com/hungrynaki-v4/restaurants/nanna_kacchi_ghar/meta/nanna_kacchi_ghar_cover_1630786753688.jpeg",
-        description:"South Indian Biryani Food test and Yummy Yummy with Sweet Firni 1 Cup from Nanna Kacchi Ghor,Mirpur,Dhaka,Bangladesh",
-        price:50,
-    },
-    {
-        id:6,
-        title:"Nanna Kacchi",
-        image:"https://static.hungrynaki.com/hungrynaki-v4/restaurants/nanna_kacchi_ghar/meta/nanna_kacchi_ghar_cover_1630786753688.jpeg",
-        description:"South Indian Biryani Food test and Yummy Yummy with Sweet Firni 1 Cup from Nanna Kacchi Ghor,Mirpur,Dhaka,Bangladesh",
-        price:50,
-    },
-]
+
+
 
 const Breakfast = () => {
+    const[foods,setFoods]=useState([]);
+    const [isLoading,setIsLoading]=useState(true);
+
+    useEffect(()=>{
+        setIsLoading(true)
+        fetch('http://localhost:5000/foodsItem')
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data)
+        
+          setFoods(data)
+          setIsLoading(false)
+          
+        })
+    },[])
     return (
         <Container id="breakfast" className="my-5 pb-5 main-box">
+            { isLoading && <Spinner animation="border" variant="primary" />}
             
-            <h1 className="text-center py-5 fw-bolder text-black fs-1">Welcome e-Foods BreakFast Food Items</h1>
-           <div className="row  ">
+            <h1 className="text-center py-3 fw-bolder text-black fs-1 main-box">Welcome e-Foods BreakFast Food Items</h1>
+           <div className="row mt-5 ">
                {
-                   foods.map(food =><div key={food?.id} food={food} className="col col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                   foods.map(food =><div key={food?._id} food={food} className="col col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                     <CardGroup>
                         <Card>
                             <Card.Img variant="top" src={food?.image}  />
@@ -68,7 +43,9 @@ const Breakfast = () => {
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer>
+                                <Link to={`/confirmOrder/${food._id}`}>
                             <button className="btn btn-primary fw-bolder">Order-Now</button>
+                            </Link>
                             </Card.Footer>
                          </Card>
 

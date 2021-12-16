@@ -1,0 +1,19 @@
+.makeAdmin-bg{
+    background-image: url('https://media.istockphoto.com/photos/press-enter-button-on-the-keyboard-computer-shield-cyber-key-lock-picture-id901609212?b=1&k=20&m=901609212&s=170667a&w=0&h=NHqjVycMsYvkRlB02QOsodq95lkzCCpnCp9HYriIJyk=');
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-blend-mode: overlay;
+}
+
+.admin-title{
+    font-size:40px;
+    font-weight:800;
+    text-align:center;
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+
+ 
+}

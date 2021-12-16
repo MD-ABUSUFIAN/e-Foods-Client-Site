@@ -1,19 +1,20 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import './JoinTeam.css';
 
 
 const JoinTeam = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
     return (
-        <Container className="main-box my-5">
-            <h1 className="text-center py-5 fs-1 fw-bolder text-primary ">Join Our Team</h1>
+        <Container className="main-box my-5 bg-black">
+            <h1 className="text-center p-3 fs-1 fw-bolder text-white main-box ">Join Our Team</h1>
             <div className="row ">
 
                 {/* Join Team Article section */}
 
-                <div className="col col-lg-6 col-md-6 col-sm-12 col-12 py-5 px-3">
+                <div className="col col-lg-6 col-md-6 col-sm-12 col-12 py-5 px-3 text-white fw-bolder align-item-justify">
 
                 <div>
                 <h2>why not join our team?</h2>
@@ -26,11 +27,7 @@ const JoinTeam = () => {
                 <p>
                 Benefits you ask? For our hourly team members we offer a very competitive pay rate, food at a steep discount, health insurance, paid sick leave, a commuter benefits, paid birthday off and a great team spirit. On average our hourly team members stay with us for nearly two years, way above the industry average.
                 </p>
-                <p>
-                For our salaried team members who stay with us on average for over five years we offer the above plus a generous and innovative approach to unlimited vacation and sick days and a bonus based on company performance.
-                <br />
-                So...why not join us?
-                </p>
+                
                 
              
                
@@ -44,18 +41,18 @@ const JoinTeam = () => {
 
                     {/* Join Team From section  */}
 
-            <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
+            <div className="col col-lg-6 col-md-6 col-sm-12 col-12 py-5">
 
                 <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <h2 className="text-black fw-bolder ">Apply Now</h2>
-                    <label>Name</label>
+                    <h2 className="text-danger fw-bolder ">Apply Now</h2>
+                    <label className="text-black fw-bolder mt-4">Name</label>
                     <input className='w-100 p-2 my-2 rounded' {...register("name", )} type="text" placeholder="Enter Your Name" />
-                    <label>Email</label>
+                    <label  className="text-black fw-bolder mt-2">Email</label>
                     <input className='w-100 p-2 mb-2 rounded' {...register("email")} type="email" placeholder="Enter Your Email" />
-                    <label>Subject</label>
+                    <label className="text-black fw-bolder mt-2">Subject</label>
                     <input className='w-100 p-2 mb-2 rounded' {...register("subject")} type="text" placeholder="Enter Your Subject" />
-                    <label>Message</label>
+                    <label className="text-black fw-bolder mt-2">Message</label>
                     <textarea className='w-100 p-2 mb-2 rounded' {...register("message")} placeholder="Write Your Message" />
                   
                     <input className='w-100 p-2 rounded bg-primary border-0 text-white fw-bold' type="submit" value="SEND" />
