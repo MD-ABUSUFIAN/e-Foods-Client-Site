@@ -9,7 +9,7 @@ const Dinner = () => {
 
     useEffect(()=>{
         setIsLoading(true)
-        fetch('http://localhost:5000/foodsItem')
+        fetch('https://pacific-journey-19792.herokuapp.com/foodsItem')
         .then(res=>res.json())
         .then(data=>{
           console.log(data)
