@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardGroup, Container, Spinner } from 'react-bootstrap';
 import './ManageOrder.css';
 import DashBoardNav from '../DashBoardNav/DashBoardNav';
+import swal from 'sweetalert';
 
 
 
@@ -11,20 +12,28 @@ const ManageOrder = () => {
 
     useEffect(()=>{
         setIsLoading(true)
-        fetch('https://pacific-journey-19792.herokuapp.com/foodsItem')
+        fetch('http://localhost:5000/allOrders')
         .then(res=>res.json())
         .then(data=>{
-          console.log(data)
-          
           setFoods(data)
-         
         })
         setIsLoading(false)
        
     },[isLoading])
 
     const handleDelete=id=>{
-        console.log(id)
+        setIsLoading(true)
+        fetch(`http://localhost:5000/manageOrder/${id}`,{
+            method: 'DELETE',
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            swal("Are You Sure!", "Delete This Order!", "warning");
+            setIsLoading(false)
+            console.log(data)
+        })
+     
+        
     }
    
     return (
@@ -60,8 +69,6 @@ const ManageOrder = () => {
                     </CardGroup>
                    </div>
                     
-               
-                   
                    )
                }
 

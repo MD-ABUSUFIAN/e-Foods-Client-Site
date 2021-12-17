@@ -7,7 +7,7 @@ import DashBoardNav from '../DashBoardNav/DashBoardNav';
 import './AddProduct.css'
 
 const AddProduct = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,reset } = useForm();
      const [isLoading,setIsLoading] =useState(false);
   const onSubmit = data => {
       setIsLoading(true);
@@ -19,7 +19,7 @@ const AddProduct = () => {
        .then(data=>{
            if(data.insertedId=true){
             swal("Product Add Successfully", "Please Reload Page", "success");
-              
+              reset()
            }
        })
        setIsLoading(false)
