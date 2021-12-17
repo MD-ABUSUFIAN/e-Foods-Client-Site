@@ -37,7 +37,7 @@ const ConfirmOrderPage = () => {
 
      const onSubmit = data => {
      data.status="Pending";
-     fetch('http://localhost:5000/confirmOrder',{
+     fetch('https://pacific-journey-19792.herokuapp.com/confirmOrder',{
          method: 'POST',
          headers: { 'Content-Type': 'application/json'},
          body: JSON.stringify(data)
@@ -46,7 +46,7 @@ const ConfirmOrderPage = () => {
         
           if(data.insertedId){
             console.log(data)
-           swal("Product Add Successfully", "Please Reload Page", "success");
+           swal("Your Order Successfully", "Please Check Your DashBoard My Order List", "success");
                 reset()
              
           }

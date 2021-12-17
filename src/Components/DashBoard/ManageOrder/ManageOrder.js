@@ -12,7 +12,7 @@ const ManageOrder = () => {
 
     useEffect(()=>{
         setIsLoading(true)
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://pacific-journey-19792.herokuapp.com/allOrders')
         .then(res=>res.json())
         .then(data=>{
           setFoods(data)
@@ -23,7 +23,7 @@ const ManageOrder = () => {
 
     const handleDelete=id=>{
         setIsLoading(true)
-        fetch(`http://localhost:5000/manageOrder/${id}`,{
+        fetch(`https://pacific-journey-19792.herokuapp.com/manageOrder/${id}`,{
             method: 'DELETE',
         })
         .then(res=>res.json())
