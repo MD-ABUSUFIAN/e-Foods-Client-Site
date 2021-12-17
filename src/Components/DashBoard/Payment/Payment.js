@@ -1,11 +1,12 @@
 import React from 'react';
 import DashBoardNav from '../DashBoardNav/DashBoardNav';
+import './Payment.css'
 
 const Payment = () => {
     return (
-        <div>
+        <div className="payment-bg">
             <DashBoardNav/>
-            <h1>This  is Payment page</h1>
+            
         </div>
     );
 };

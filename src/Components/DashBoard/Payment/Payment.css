@@ -1,0 +1,9 @@
+.payment-bg{
+    background-image: url('https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2018/07/on-demand-food-delivery-Payment-System.jpg');
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-blend-mode: overlay;
+}

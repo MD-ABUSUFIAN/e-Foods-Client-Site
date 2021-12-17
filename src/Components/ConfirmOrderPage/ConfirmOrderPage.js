@@ -111,7 +111,7 @@ const ConfirmOrderPage = () => {
                         <option className="fw-bold bg-warning" value="Express">Express Delivery</option>
                     </select>
                     <br/>
-                    <input className="btn btn-primary text-white fw-bolder" type="submit" value="AddProduct" />
+                    <input className="btn btn-primary text-white fw-bolder" type="submit" value="Confirm Order" />
                     
                 </form>
      
