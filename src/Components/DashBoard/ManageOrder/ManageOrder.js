@@ -3,11 +3,13 @@ import { Card, CardGroup, Container, Spinner } from 'react-bootstrap';
 import './ManageOrder.css';
 import DashBoardNav from '../DashBoardNav/DashBoardNav';
 import swal from 'sweetalert';
+import useAuth from '../../../Hooks/useAuth';
 
 
 
 const ManageOrder = () => {
     const[foods,setFoods]=useState([]);
+    const {user}=useAuth();
     const [isLoading,setIsLoading]=useState(true);
 
     useEffect(()=>{
@@ -46,20 +48,20 @@ const ManageOrder = () => {
             
            <div className="row mt-5 ">
                {
-                   foods?.map(food =><div key={food?._id} food={food} className="col col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
+                   foods?.map(food =><div key={food?._id} food={food} className="col col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
                     <CardGroup>
                         <Card>
                             <Card.Img variant="top" src={food?.image}  />
                             <Card.Body>
                                 <Card.Title className="fw-bolder text-black">{food?.title}</Card.Title>
-                                <Card.Text>
-                                    {food?.description}
+                                <Card.Text className="text-primary fw-bolder">
+                                    {user?.email}
                                 </Card.Text>
                                 <Card.Text className='fs-5 text-black'>
-                                    Price: <span className='text-danger fw-bolder fs-4'>${food?.price}</span>
+                                    Price: <span className='text-danger fw-bolder fs-4'>Tk   {food?.price}</span>
                                 </Card.Text>
                                 <Card.Text className=' text-black fw-bolder'>
-                                  Status: <span className='text-primary fs-5 fw-bolder'>{food?.status}</span>
+                                  Status: <span className='text-primary  fw-bolder'>{food?.status}</span>
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer>

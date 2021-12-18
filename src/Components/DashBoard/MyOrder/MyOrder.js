@@ -45,7 +45,7 @@ import './MyOrder.css';
 
             <Container id="breakfast" className="mt-5 pb-5 main-box">
             { isLoading &&  <Spinner animation="border" variant="primary" />}
-            <h1 className="text-center py-3 fw-bolder text-white fs-1 main-box">MANAGE ALL FOODS ORDER</h1>
+            <h1 className="text-center py-3 fw-bolder text-white fs-1 main-box">MANAGE MY FOODS ORDER</h1>
             
            <div className="row mt-3 ">
                {
@@ -56,7 +56,7 @@ import './MyOrder.css';
                             <Card.Body>
                                 <Card.Title className="fw-bolder text-black">{food?.title}</Card.Title>
                                 <Card.Text>
-                                    {food?.description}
+                                    {food?.description.slice(0,70)}
                                 </Card.Text>
                                 <Card.Text className='fs-5 text-black'>
                                     Price: <span className='text-danger fw-bolder fs-4'>${food?.price}</span>

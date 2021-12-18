@@ -5,11 +5,13 @@ import './Delivery.css';
 
 import swal from 'sweetalert';
 import DashBoardNav from '../DashBoardNav/DashBoardNav';
+import useAuth from '../../../Hooks/useAuth';
 
 
 
 const Delivery = () => {
     const[foods,setFoods]=useState([]);
+    const {user}=useAuth();
     const [isLoading,setIsLoading]=useState(true); 
     const { register, handleSubmit,reset} = useForm();
 
@@ -42,16 +44,16 @@ const Delivery = () => {
             
            <div className="row mt-5 ">
                {
-                   foods?.map(food =><div key={food?._id} food={food} className="col col-lg-3 col-md-4 col-sm-12 col-12 mb-3">
+                   foods?.map(food =><div key={food?._id} food={food} className="col col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
                     <CardGroup>
                         <Card>
                             <Card.Img variant="top" src={food?.image}  />
                             <Card.Body>
                                 <Card.Title className="fw-bolder text-black">{food?.title}</Card.Title>
-                                <Card.Text>
-                                    {food?.description.slice(0,100)}
+                                <Card.Text className="text-primary fw-bolder">
+                                    {user?.email}
                                 </Card.Text>
-                                <Card.Text className='fs-5 text-black'>
+                                <Card.Text className=' text-black fw-bolder'>
                                     Price: <span className='text-danger fw-bolder fs-4'>${food?.price}</span>
                                 </Card.Text>
                             </Card.Body>

@@ -12,7 +12,7 @@ const Breakfast = () => {
 
     useEffect(()=>{
         setIsLoading(true)
-        fetch('https://pacific-journey-19792.herokuapp.com/foodsItem')
+        fetch('https://pacific-journey-19792.herokuapp.com/specific?item=breakFast')
         .then(res=>res.json())
         .then(data=>{
           console.log(data)
@@ -36,10 +36,10 @@ const Breakfast = () => {
                             <Card.Body>
                                 <Card.Title>{food?.title}</Card.Title>
                                 <Card.Text>
-                                    {food?.description}
+                                    {food?.description.slice(0,100)}
                                 </Card.Text>
                                 <Card.Text className='fs-5 text-black'>
-                                    Price: <span className='text-danger fw-bolder fs-4'>${food?.price}</span>
+                                    Price: <span className='text-danger fw-bolder fs-4'>Tk    {food?.price}</span>
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer>
