@@ -7,6 +7,7 @@ import './ConfirmOrder.css';
 import swal from 'sweetalert';
 import useAuth from '../../Hooks/useAuth';
 import Navigation from '../Home/Navigation/Navigation'
+import Footer from '../Footer/Footer';
 
 const ConfirmOrderPage = () => {
     const {user}=useAuth();
@@ -120,6 +121,7 @@ const ConfirmOrderPage = () => {
             </div>
                 
             </Container>
+            <Footer/>
            
         </div>
     );

@@ -13,7 +13,7 @@ const Review = () => {
      const [isLoading,setIsLoading] =useState(false);
   const onSubmit = data => {
       setIsLoading(true);
-      fetch('http://localhost:5000/customerReview',{
+      fetch('https://pacific-journey-19792.herokuapp.com/customerReview',{
           method: 'POST',
           headers: { 'Content-Type': 'application/json'},
           body: JSON.stringify(data)

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardGroup, Container, Spinner } from 'react-bootstrap';
 import swal from 'sweetalert';
 import useAuth from '../../../Hooks/useAuth';
+import Footer from '../../Footer/Footer';
 import DashBoardNav from '../DashBoardNav/DashBoardNav';
 import './MyOrder.css';
 
@@ -36,18 +37,20 @@ import './MyOrder.css';
             console.log(data)
         })
      
-        
+         
     }
-   
+    
     return (
-       <div className="myOrder-bg">
+       
+       <div className="myOrder-bg pb-5">
            <DashBoardNav/>
+          
 
-            <Container id="breakfast" className="mt-5 pb-5 main-box">
-            { isLoading &&  <Spinner animation="border" variant="primary" />}
+            <Container id="breakfast" className="mt-5 mb-5  main-box">
+           
             <h1 className="text-center py-3 fw-bolder text-white fs-1 main-box">MANAGE MY FOODS ORDER</h1>
-            
-           <div className="row mt-3 ">
+            {isLoading &&  <Spinner animation="border" variant="primary" />}
+           <div className="row mt-3  ">
                {
                    foods?.map(food =><div key={food?._id} food={food} className="col col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
                     <CardGroup>
@@ -77,6 +80,7 @@ import './MyOrder.css';
 
            </div>
         </Container>
+   
        </div>
     );
 };

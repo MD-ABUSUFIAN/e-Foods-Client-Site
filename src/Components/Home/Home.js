@@ -9,6 +9,7 @@ import Other from './Items/Others/Others';
 import JoinTeam from './JoinTeam/JoinTeam';
 import Navigation from './Navigation/Navigation';
 import './Home.css'
+import Footer from '../Footer/Footer';
 
 const Home = () => {
     const {user}=useAuth();
@@ -25,6 +26,7 @@ const Home = () => {
             <Dinner></Dinner>
             <Other></Other>
             <JoinTeam></JoinTeam>
+            <Footer/>
          
            
         </div>

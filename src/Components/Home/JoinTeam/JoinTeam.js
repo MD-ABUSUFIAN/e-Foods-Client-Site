@@ -8,9 +8,9 @@ const JoinTeam = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
     return (
-        <Container className="main-box mt-5">
+        <Container className="main-box mt-5 ">
             <h1 className="text-center p-3 fs-1 fw-bolder text-white main-box ">Join Our Team</h1>
-            <div className="row ">
+            <div className="row mb-5">
 
                 {/* Join Team Article section */}
 

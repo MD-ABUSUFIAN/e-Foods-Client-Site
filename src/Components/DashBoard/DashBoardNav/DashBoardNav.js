@@ -1,11 +1,12 @@
-import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Nav, Navbar, Spinner } from 'react-bootstrap';
 import { NavLink,Outlet } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import logo from '../../Images/logo.png';
 
 const DashBoardNav = () => {
     const {user,logOut}=useAuth();
+
     return (
         <div>
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -14,7 +15,7 @@ const DashBoardNav = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
            <Navbar.Collapse id="responsive-navbar-nav">
            
-
+         
             { user?.email ?
             <Nav className="ms-auto">
                     <NavLink className=' fs-5 pt-1 m-1' exact  to="/dashboard/myOrder">
@@ -43,8 +44,9 @@ const DashBoardNav = () => {
                              <br />
                     </Nav>
               
-                  
                         } 
+                        
+
                  <NavLink className=' ms-auto  fs-5 pt-2' to="/" >
             <button className="rounded bg-danger text-white border-0 ms-1  fw-bolder px-3 py-2" onClick={logOut}>Logout</button>
             </NavLink>

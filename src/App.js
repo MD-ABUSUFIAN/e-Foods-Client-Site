@@ -20,6 +20,7 @@ import MakeAdmin from './Components/DashBoard/MakeAdmin/MakeAdmin';
 import AddProduct from './Components/DashBoard/AddProduct/AddProduct';
 import Delivery from './Components/DashBoard/DeliveryStatus/Delivery';
 import ManageOrder from './Components/DashBoard/ManageOrder/ManageOrder';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/dashboard/addProduct" element={<AddProduct/>}/>
         <Route path="/dashboard/makeAdmin" element={<MakeAdmin/>}/>
         </Routes>
+       
       
     </BrowserRouter>
      </AuthProvider>
