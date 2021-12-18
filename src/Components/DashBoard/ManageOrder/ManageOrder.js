@@ -12,7 +12,7 @@ const ManageOrder = () => {
 
     useEffect(()=>{
         setIsLoading(true)
-        fetch('https://pacific-journey-19792.herokuapp.com/allOrders')
+        fetch('https://pacific-journey-19792.herokuapp.com/allOrder')
         .then(res=>res.json())
         .then(data=>{
           setFoods(data)
@@ -57,6 +57,9 @@ const ManageOrder = () => {
                                 </Card.Text>
                                 <Card.Text className='fs-5 text-black'>
                                     Price: <span className='text-danger fw-bolder fs-4'>${food?.price}</span>
+                                </Card.Text>
+                                <Card.Text className=' text-black fw-bolder'>
+                                  Status: <span className='text-primary fs-5 fw-bolder'>{food?.status}</span>
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer>

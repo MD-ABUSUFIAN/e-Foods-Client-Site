@@ -17,7 +17,7 @@ const AddProduct = () => {
           body: JSON.stringify(data)
       }).then(res=>res.json())
        .then(data=>{
-           if(data.insertedId=true){
+           if(data?.insertedId){
             swal("Product Add Successfully", "Please Reload Page", "success");
               reset()
            }

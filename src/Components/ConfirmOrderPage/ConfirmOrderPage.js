@@ -82,7 +82,7 @@ const ConfirmOrderPage = () => {
                 <div className="col col-lg-6 col-md-6 col-sm-12 col-12 ">
            
             <div>
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                     
                     <label className="fw-bold fs-5 text-info">Your Email:</label>
                     <input className="w-100 py-2  " {...register("email",{ required: true }) }  defaultValue={user?.email} required  />

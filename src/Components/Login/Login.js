@@ -46,8 +46,8 @@ const Login = () => {
                    <br />
                     <span className="text-white fs-5 fw-bolder">NEW USER ? Please  <Link className="fw-bolder fs-4" to="/register">Register</Link></span>
                     <br />
-                    <p className="text-center text-warning fs-4 fw-bolder ">----------------or----------------</p>
-                    <button className="w-25 mx-auto rounded-pill d-flex" onClick={handleGoogleLogin}><img className=" img-fluid rounded-pill w-50 mx-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAd7suBeSboSHtNORMJI8iL7z6u9IWZDlKN6ANICo20DPGZ8psvwPJdZ3NRR6O6CAn8i4&usqp=CAU" alt="" /></button>
+                    <p className="text-center text-warning fs-4 fw-bolder ">-------or------</p>
+                    <button className=" mx-auto rounded-pill d-flex border-primary" onClick={handleGoogleLogin}><img className=" img-fluid w-25  rounded-pill mx-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAd7suBeSboSHtNORMJI8iL7z6u9IWZDlKN6ANICo20DPGZ8psvwPJdZ3NRR6O6CAn8i4&usqp=CAU" alt="" /></button>
                 </div>
                
             </div>
