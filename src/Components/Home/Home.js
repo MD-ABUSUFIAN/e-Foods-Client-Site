@@ -10,6 +10,7 @@ import JoinTeam from './JoinTeam/JoinTeam';
 import Navigation from './Navigation/Navigation';
 import './Home.css'
 import Footer from '../Footer/Footer';
+import AppGellary from './AppGellary/AppGellary';
 
 const Home = () => {
     const {user}=useAuth();
@@ -25,10 +26,10 @@ const Home = () => {
             <Launch></Launch>
             <Dinner></Dinner>
             <Other></Other>
+            <AppGellary/>
             <JoinTeam></JoinTeam>
             <Footer/>
          
-           
         </div>
     );
 };

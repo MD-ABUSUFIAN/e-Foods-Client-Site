@@ -1,0 +1,11 @@
+.appGellary-bg{
+    background-color: #D70F64;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.747);
+}
+.appGellary-img{
+    height:350px !important;
+    width: 100%;
+    border-radius: 20px;
+
+}
