@@ -47,13 +47,13 @@ const JoinTeam = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <h2 className="text-danger fw-bolder ">Apply Now</h2>
                     <label className="text-warning fw-bolder mt-4">Name</label>
-                    <input className='w-100 p-2 my-2 rounded' {...register("name", )} type="text" placeholder="Enter Your Name" />
+                    <input className='w-100 p-2 my-2 rounded' {...register("name", )} type="text" placeholder="Enter Your Name" required />
                     <label  className="text-warning fw-bolder mt-2">Email</label>
-                    <input className='w-100 p-2 mb-2 rounded' {...register("email")} type="email" placeholder="Enter Your Email" />
+                    <input className='w-100 p-2 mb-2 rounded' {...register("email")} type="email" placeholder="Enter Your Email" required/>
                     <label className="text-warning fw-bolder mt-2">Subject</label>
-                    <input className='w-100 p-2 mb-2 rounded' {...register("subject")} type="text" placeholder="Enter Your Subject" />
+                    <input className='w-100 p-2 mb-2 rounded' {...register("subject")} type="text" placeholder="Enter Your Subject" required />
                     <label className="text-warning fw-bolder mt-2">Message</label>
-                    <textarea className='w-100 p-2 mb-2 rounded' {...register("message")} placeholder="Write Your Message" />
+                    <textarea className='w-100 p-2 mb-2 rounded' {...register("message")} placeholder="Write Your Message" required/>
                   
                     <input className='w-100 p-2 rounded bg-primary border-0 text-white fw-bold' type="submit" value="SEND" />
                 </form>
